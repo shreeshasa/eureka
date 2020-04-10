@@ -50,9 +50,10 @@ public class AutomationApplication {
   @Bean (destroyMethod = "quit")
   @Scope (SCOPE_CUCUMBER_GLUE)
   public WebDriver webDriver() {
-    final WebDriver webDriver = createWebDriver();
-    WEB_DRIVER.set(webDriver);
-    return webDriver;
+    final WebDriver driver = createWebDriver();
+    driver.manage().window().maximize();
+    WEB_DRIVER.set(driver);
+    return driver;
   }
 
   private WebDriver createWebDriver() {
