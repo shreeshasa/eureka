@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.shreeshasa.config.BrowserProperties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
@@ -31,6 +32,7 @@ public enum WebDrivers implements DriverSetup {
       ChromeOptions options = new ChromeOptions();
       options.setHeadless(browserProperties.isHeadless());
       options.merge(new DesiredCapabilities(browserProperties.getCapabilities()));
+      System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
       return new ChromeDriver(options);
     }
   },
