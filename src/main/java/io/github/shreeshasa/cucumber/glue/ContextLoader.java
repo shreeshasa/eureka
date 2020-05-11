@@ -1,6 +1,7 @@
 package io.github.shreeshasa.cucumber.glue;
 
 import io.cucumber.java.Before;
+import io.cucumber.spring.CucumberContextConfiguration;
 import io.github.shreeshasa.AutomationApplication;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,6 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  *
  * @author shreeshasa
  */
+@CucumberContextConfiguration
 @RunWith (SpringRunner.class)
 @SpringBootTest (classes = AutomationApplication.class)
 public class ContextLoader {

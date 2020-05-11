@@ -22,7 +22,7 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions (features = "classpath:features",
   strict = true,
   monochrome = true,
-  tags = {"not @Ignore", "not @Skip"},
+  tags = {"not @ignore and not @skip and not @wip"},
   plugin = {
     "pretty",
     "io.github.shreeshasa.cucumber.plugin.TestReportListener",
